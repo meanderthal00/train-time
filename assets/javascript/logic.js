@@ -19,26 +19,28 @@ $("#submit-button").on("click", function(event){
     var departCycle = $("#departCycle").val().trim();
     
 
-// creates local tmeporary object for holding Employee data
-var newEmp = {
-    name: employee,
-    role: role,
-    start: startD,
-    rate: payRate
+// creates local tmeporary object for holding train data
+var newTrain = {
+    name: trainAdd,
+    destination: destination,
+    start: startDepart,
+    frequency: departCycle
 };
-// uploads emplyee data to the database
-database.ref().push(newEmp);
-console.log(newEmp.name);
-console.log(newEmp.role);
-console.log(newEmp.start);
-console.log(newEmp.rate);
+// uploads train data to the database
+database.ref().push(newTrain);
+console.log(newTrain.name);
+console.log(newTrain.destination);
+console.log(newTrain.start);
+console.log(newTrain.frequency);
 
-alert("Employee added");
+alert("Train added");
 
-$("#employee-name").val("")
-$("#role").val("")
-$("#start-date").val("")
-$("#monthly-rate").val("")
+// clears inputs after submission
+
+$("#trainName").val("")
+$("#destination").val("")
+$("#startDepart").val("")
+$("#departCycle").val("")
 
 });
 
@@ -46,18 +48,18 @@ $("#monthly-rate").val("")
 database.ref().on("child_added", function(childSnapshot, prevChildKey){
     console.log(childSnapshot.val());
 //   storing to a variable   
-    var empName =childSnapshot.val().name;
-    var empRole = childSnapshot.val().role;
-    var empStart = childSnapshot.val().startD;
-    var empRate = childSnapshot.val().payRate
+    var trainTitle =childSnapshot.val().name;
+    var trainDest = childSnapshot.val().destination;
+    var trainStart = childSnapshot.val().start;
+    var trainFreq = childSnapshot.val().frequency;
     // logging employee info
-    console.log(empName);
-    console.log(empRole);
-    console.log(empStart);
-    console.log(empRate);
+    console.log(trainTitle);
+    console.log(trainDest);
+    console.log(trainStart);
+    console.log(trainFreq);
 
     // add each train's data into the table
-    $("#empTable > tbody").append(`<tr><td>${empName}</td><td>${empRole}</td><td>${empStart}</td><td>${empStart}</td><td>${empRate}</td></tr>`);
+    $("#trainTable > tbody").append("<tr><td>" +trainTitle+ "</td><td>" +trainDest+ "</td><td>" +trainStart+"</td><td>"+trainFreq+"</td><td");
 
 
 })
