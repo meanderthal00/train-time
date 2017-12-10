@@ -33,7 +33,7 @@ console.log(newTrain.destination);
 console.log(newTrain.start);
 console.log(newTrain.frequency);
 
-alert("Train added");
+// alert("Train added");
 
 // clears inputs after submission
 
@@ -44,7 +44,7 @@ $("#departCycle").val("")
 
 });
 
-// create firebase event for adding emplyee to the database and a row in the html when a user adds an entry
+// create firebase event for adding trains to the database and a row in the html when a user adds an entry
 database.ref().on("child_added", function(childSnapshot, prevChildKey){
     console.log(childSnapshot.val());
 //   storing to a variable   
@@ -52,14 +52,26 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey){
     var trainDest = childSnapshot.val().destination;
     var trainStart = childSnapshot.val().start;
     var trainFreq = childSnapshot.val().frequency;
-    // logging employee info
+    // logging train info
     console.log(trainTitle);
     console.log(trainDest);
     console.log(trainStart);
     console.log(trainFreq);
+// current time display
+var now = moment();
+$("#currTime").text(moment());
+
+
+// Using moment to calculate the next train arrival
+    
 
     // add each train's data into the table
-    $("#trainTable > tbody").append("<tr><td>" +trainTitle+ "</td><td>" +trainDest+ "</td><td>" +trainStart+"</td><td>"+trainFreq+"</td><td");
+    $("#trainTable > tbody").prepend("<tr><td>" +trainTitle+ "</td><td>" +trainDest+ "</td><td>" +trainStart+"</td><td>"+trainFreq+"</td><td");
+// need to add train next arrival column
+// and  current time display
+
 
 
 })
+
+
