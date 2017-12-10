@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <link rel="icon" type="image/png" sizes="16x16" href="assets/images/moneybag.png">
 
-        <title>Employee Data Management</title>
+        <title>Train Schedule</title>
         <!-- Bootstrap links -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
             crossorigin="anonymous">
@@ -35,7 +35,7 @@
             </div>
             </div>
             <!-- table Div -->
-            <div class="row" id="currentEmps">
+            <div class="row" id="trainTable">
                 <div class="col-xs-12">
                     <!-- table panel -->
                     <div class="panel panel-primary" id= "tablePanel">
@@ -76,29 +76,29 @@
 
             </div>          
             
-            <div class="row" id="addEmployee">
+            <div class="row" id="infoInput">
                 <div class="col-xs-12">
                     <div class="panel panel-primary" id ="input">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Add Employee</h3>
+                            <h3 class="panel-title">Add Train</h3>
                         </div>
                         <div class="panel-body">
                             <form>
                                 <fieldset>
-                                    Employee Name:
+                                    Train Name:
                                     <br>
-                                    <input type="text" name="employee-name" id="employee-name">
-                                    <br> Role:
+                                    <input type="text" name="Train-name" id="trainName">
+                                    <br> Destination:
                                     <br>
-                                    <input type="text" name="role" id="role">
-                                    <br> Start Date (DD/MM/YY - ex:01/01/89):
+                                    <input type="text" name="Destination" id="destination">
+                                    <br> First Departure:
                                     <br>
-                                    <input type="text" name="start-date" id="start-date">
-                                    <br> Monthly Rate:
+                                    <input type="text" name="start-depart" id="startDepart">
+                                    <br> Departure Cycle:
                                     <br>
-                                    <input type="text" name="monthly-rate" id="monthly-rate">
+                                    <input type="text" name="depart-cycle" id="departCycle">
                                     <br>
-                                    <button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
+                                    <button type="submit" class="btn btn-primary" id="submit-button">Add my Train</button>
                                 </fieldset>
                             </form>
                         </div>
