@@ -1,0 +1,119 @@
+<DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/images/moneybag.png">
+
+        <title>Employee Data Management</title>
+        <!-- Bootstrap links -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+            crossorigin="anonymous">
+            <!-- css link -->
+            <link rel="stylesheet" href="assets/css/style.css"> 
+        <!-- Additional asset links here  -->
+    </head>
+
+    <body>
+        <div class="container">
+            <!-- jumbotron div -->
+            <div class="row">
+                <div class="col-xs-12">
+            <div class="jumbotron">
+                <h1 class="text-center">
+                    <strong>Schedule of Departures
+                        <strong>
+                </h1>
+                <h3 class="text-center">
+                
+                  <p id ="currTime"  <strong> 
+                      (Date and time displays here)
+                  </strong>
+                </h3>
+
+            </div>
+            </div>
+            </div>
+            <!-- table Div -->
+            <div class="row" id="currentEmps">
+                <div class="col-xs-12">
+                    <!-- table panel -->
+                    <div class="panel panel-primary" id= "tablePanel">
+                            <div class="panel-heading">
+                              <h3 class="panel-title">Departure Schedule</h3>
+                            </div>
+                            <div class="panel-body" id= "empTable">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Train</th>
+                                            <th>Destination</th>
+                                            <th>Start Date</th>
+                                            <th>First Departure</th>
+                                            <th>Departure Cycle</th>
+                                            </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- These will probably need data attributes or ID's, but I'd rather code that once we know what we're doing. Also, I feel like this should be done with jQuery and not HTMl so there isn't a bajillion lines of identical code -->
+                                        <tr>
+                                            <td> </td>
+                                            <td> </td>
+                                            <td> </td>
+                                            <td> </td>
+                                            <td> </td>
+                                            
+                                        </tr>
+                                        
+                                        <!-- End table -->
+                                    </tbody>
+                                </table>
+    
+                              
+
+                            </div>
+                          </div>
+                </div>
+
+            </div>          
+            
+            <div class="row" id="addEmployee">
+                <div class="col-xs-12">
+                    <div class="panel panel-primary" id ="input">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Add Employee</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form>
+                                <fieldset>
+                                    Employee Name:
+                                    <br>
+                                    <input type="text" name="employee-name" id="employee-name">
+                                    <br> Role:
+                                    <br>
+                                    <input type="text" name="role" id="role">
+                                    <br> Start Date (DD/MM/YY - ex:01/01/89):
+                                    <br>
+                                    <input type="text" name="start-date" id="start-date">
+                                    <br> Monthly Rate:
+                                    <br>
+                                    <input type="text" name="monthly-rate" id="monthly-rate">
+                                    <br>
+                                    <button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.3/moment.min.js"></script>
+            
+            <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+               <script
+            src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous"></script>
+    
+            <script type="text/javascript" src="assets/javascript/logic.js">  </script>
+        </body>
+
+    </html>

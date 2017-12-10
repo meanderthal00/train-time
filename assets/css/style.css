@@ -1,0 +1,33 @@
+.jumbotron{
+    background-color:black;
+    color:white;
+}
+
+/* .panel-heading{
+    background-color:black;
+    color: white;
+} */
+
+/* #addEmployee{
+    margin:30px;
+    width:100%;
+    background-color: red;
+} */
+
+.btn{
+    margin-top:15px;
+}
+
+.panel-primary{
+    width: 101.25%;
+    margin-left: -6px;
+    
+}
+input {
+    width:100%;
+    height: 30px;
+}
+
+/* #currTime {
+    background-color: grey;
+} */
