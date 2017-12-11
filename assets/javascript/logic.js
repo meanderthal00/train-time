@@ -28,10 +28,10 @@ var newTrain = {
 };
 // uploads train data to the database
 database.ref().push(newTrain);
-console.log(newTrain.name);
-console.log(newTrain.destination);
-console.log(newTrain.start);
-console.log(newTrain.frequency);
+// console.log(newTrain.name);
+// console.log(newTrain.destination);
+// console.log(newTrain.start);
+// console.log(newTrain.frequency);
 
 // alert("Train added");
 
@@ -46,29 +46,44 @@ $("#departCycle").val("")
 
 // create firebase event for adding trains to the database and a row in the html when a user adds an entry
 database.ref().on("child_added", function(childSnapshot, prevChildKey){
-    console.log(childSnapshot.val());
+    // console.log(childSnapshot.val());
 //   storing to a variable   
     var trainTitle =childSnapshot.val().name;
     var trainDest = childSnapshot.val().destination;
     var trainStart = childSnapshot.val().start;
     var trainFreq = childSnapshot.val().frequency;
     // logging train info
-    console.log(trainTitle);
-    console.log(trainDest);
-    console.log(trainStart);
-    console.log(trainFreq);
+    // console.log(trainTitle);
+    // console.log(trainDest);
+    // console.log(trainStart);
+    // console.log(trainFreq);
 // current time display
 var now = moment();
-$("#currTime").text(moment());
+$("#currTime").text(moment(now).format("h:mm a"));
+// console.log("hi, the time is " +moment(now).format("hh:mm"));
 
+// Using moment to calculate the next train arrival based on current time
+     
+    // times need to be converted from military time (as entered by the user)
+    var milTimeConv = moment(trainStart,"hh:mm a").subtract(1, "years");
+    // console.log("This is the Conversion " +milTimeConv);
 
-// Using moment to calculate the next train arrival
-    
+    // after first train conversion, subtract it from the current time to find the time difference
+   var timeDiff = moment().diff(moment(milTimeConv), "minutes");
+//    console.log(timeDiff +" is the difference");
+
+    // calculate the frequency of the trains
+    var timeRemainder = timeDiff % trainFreq;
+    // console.log(timeRemainder + " is the remainder");
+
+// min till next train
+    var timeNextArr = trainFreq - timeRemainder;
+    console.log("Next train in " + timeNextArr+ " mins");
 
     // add each train's data into the table
-    $("#trainTable > tbody").prepend("<tr><td>" +trainTitle+ "</td><td>" +trainDest+ "</td><td>" +trainStart+"</td><td>"+trainFreq+"</td><td");
-// need to add train next arrival column
-// and  current time display
+    $("#trainTable > tbody").prepend("<tr><td>" +trainTitle+ "</td><td>" +trainDest+ "</td><td>" +trainStart+"</td><td>"+trainFreq+"</td><td>" +timeNextArr+ "</td>");
+
+
 
 
 
