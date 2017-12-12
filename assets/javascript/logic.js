@@ -81,7 +81,7 @@ $("#currTime").text(moment(now).format("h:mm a"));
     console.log("Next train in " + timeNextArr+ " mins");
 
     // add each train's data into the table
-    $("#trainTable > tbody").prepend("<tr><td>" +trainTitle+ "</td><td>" +trainDest+ "</td><td>" +trainStart+"</td><td>"+trainFreq+"</td><td>" +timeNextArr+ "</td>");
+    $("#trainTable > tbody").prepend("<tr><td>" +trainTitle+ "</td><td>" +trainDest+ "</td><td>" +trainStart+"</td><td>"+trainFreq+ " mins"+"</td><td>" +timeNextArr+ " mins"+ "</td>");
 
 
 
