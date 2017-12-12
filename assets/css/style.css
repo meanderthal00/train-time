@@ -1,33 +1,45 @@
 .jumbotron{
-    background-color:black;
+    background-color: rgb(35, 75, 80);
     color:white;
+    border-width:5px;  
+    border-style: double;
+    border-color: rgb(69, 140, 148);
 }
 
-/* .panel-heading{
-    background-color:black;
-    color: white;
-} */
-
-/* #addEmployee{
-    margin:30px;
-    width:100%;
-    background-color: red;
-} */
 
 .btn{
     margin-top:15px;
+    background-color: rgb(69, 140, 148);
+    color:white;
+    border-color: rgb(35, 75, 80); 
+    border-width:5px;  
+    border-style:double;
+
+}
+#head {
+    background-color: rgb(69, 140, 148);
+    color:white;
 }
 
 .panel-primary{
     width: 101.25%;
     margin-left: -6px;
-    
+    background-color: rgb(35, 75, 80);
+    color:white; 
+    border-width:5px;  
+    border-style: double;
+    border-color: rgb(69, 140, 148);   
+}
+table {
+    background-color: rgb(35, 75, 80);
+    color:white;   
+
 }
 input {
     width:100%;
     height: 30px;
 }
 
-/* #currTime {
-    background-color: grey;
-} */
+body {
+    background-image: url(../images/backPattern.jpg);
+}
